@@ -168,8 +168,7 @@ class Aggregate (QTableWidget):
         [self.tr("last Submission"),''],
         [self.tr('sync time'),3600]
         ]
-    def getServiceName(self):
-        return self.service_id
+
      
     def getAuth(self):
         auth = requests.auth.HTTPDigestAuth(self.getValue(self.tr('user')),self.getValue(self.tr('password')))
@@ -420,9 +419,7 @@ class Aggregate (QTableWidget):
             self.iface.messageBar().pushCritical(self.tag,self.tr("Form is not sent"))
         file.close()
         return response
-    def test(self,task,a,b):
-        print(a,b)
-        return [a,b]
+
     def comp(self,exception,result):
         if exception:
             print("exception in task execution")
